@@ -1,0 +1,50 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+    <meta charset="UTF-8">
+    <meta http-equiv="X-UA-Compatible" content="IE=edge">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title>Document</title>
+    <link rel="stylesheet" href="style.css">
+    <script src="calcolatrice.js"></script>
+</head>
+<body>
+  <div name="form" class="dil">
+        <input value="" name="area" type="text" class="display"  id="display"placeholder="0" readonly  >
+             <div class="numeri">
+    
+               <div class="primitre"> 
+                <input class="bottoni"type="button" value="1"; onclick="digit(1)"></input>
+                <input type="button" class="bottoni" value="2"; onclick="digit(2)"></input>
+                <input class="bottoni"type="button" value="3"; onclick="digit(3)"></input>
+              
+                <input type="button"onclick="digit('-')" class="operazione" value="-"></input>
+                <input type="button" onclick="ris()" class="operazione" value="=">
+               </div>
+                  <div class="seconditre">
+                    <input type="button" class="bottoni" value="4"; onclick="digit(4)"></input>
+                    <input type="button" class="bottoni" value="5"; onclick="digit(5)"></input>
+                    <input type="button" value="6"; class="bottoni" onclick="digit(6)"></input>
+                    <input type="button"onclick="digit('+');"class="operazione" value="+"></input>
+                    <input type="button"onclick="digit('/');"class="operazione" value="/"></input>
+                  </div>
+                    <div class="terzitre">
+                      <input type="button" value="7"; class="bottoni" onclick="digit(7)"></input>
+                      <input type="button" value="8"; class="bottoni" onclick="digit(8)"></input>
+                      <input type="button" value="9"; class="bottoni" onclick="digit(9)"></input>
+                      <input type="button" value="0"; class="bottoni" onclick="digit(0)"></input>
+                        <input type="button" onclick="digit('*');"class="operazione" value="*"></input>
+                    </div>
+                    <div>
+                      
+                      
+                      
+                      <input type="button" onclick="cancella()"class="bottone" value="AC"></input>
+                    </div>
+                
+            </div>
+        </div>
+      </div>
+</body>
+</html>
+
