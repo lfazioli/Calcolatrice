@@ -6,16 +6,81 @@
     <meta name="viewport" content="width=device-width, initial-scale=1.0">
 
     <title>Home</title>
-    <link rel="stylesheet" href="styleh.css">
+    <link rel="stylesheet" href="style.css"/>
+
+    <script>
+        function insertChar(char) {
+            document.getElementById('display').value += char;
+        }
+
+        function clearDisplay() {
+            document.getElementById('display').value = '';
+        }
+
+        function deleteChar() {
+            let display = document.getElementById('display').value;
+            document.getElementById('display').value = display.substring(0, display.length - 1);
+        }
+
+        function calculate() {
+            let display = document.getElementById('display').value;
+            let result = eval(display);
+            document.getElementById('display').value = result;
+        }
+
+
+    </script>
 </head>
 <body>
-    <h1>Numeri con Lorenzo Fazioli II</h1>
+    <h1 class="title">Calcolatrice</h1>
 
     <div class="container">
-     <a href="somma/somma.html">Somma tra due Numeri</a>
-     <a href="">Sottrazione tra due Numeri</a>
-     <a href="">Moltiplicazione tra due Numeri</a>
-     <a href="">Divisione tra due numeri</a>
-    </div>
-</body>
+        <div class="display">
+            <input type="text" id="display" disabled>
+        </div>
+        <div class="buttons">
+            <button onclick="clearDisplay()">C</button>
+            <button onclick="deleteChar()">CE</button>
+            <button onclick="noting()">?</button>
+            <button onclick="insertChar('/')">/</button>
+            <button onclick="insertChar('7')">7</button>
+            <button onclick="insertChar('8')">8</button>
+            <button onclick="insertChar('9')">9</button>
+            <button onclick="insertChar('*')">*</button>
+            <button onclick="insertChar('4')">4</button>
+            <button onclick="insertChar('5')">5</button>
+            <button onclick="insertChar('6')">6</button>
+            <button onclick="insertChar('-')">-</button>
+            <button onclick="insertChar('1')">1</button>
+            <button onclick="insertChar('2')">2</button>
+            <button onclick="insertChar('3')">3</button>
+            <button onclick="insertChar('+')">+</button>
+            <button style="grid-column: span 2;" onclick="insertChar('0')">0</button>
+            <button onclick="insertChar('.')">.</button>
+            <button onclick="calculate()">=</button>
+
+            <script>
+                document.addEventListener('keydown', function(event) {
+                    const key = event.key;
+                    if (key === 'Enter') {
+                        calculate();
+                    } else if (key === 'Backspace') {
+                        deleteChar();
+                    } else if (key === 'Escape') {
+                        clearDisplay();
+                    } else if (key === '/') {
+                        insertChar('/');
+                    } else if (key === '*') {
+                        insertChar('*');
+                    } else if (key === '-') {
+                        insertChar('-');
+                    } else if (key === '+') {
+                        insertChar('+');
+                    } else if (key === '.') {
+                        insertChar('.');
+                    } else if (key >= '0' && key <= '9') {
+                        insertChar(key);
+                    }
+                });
+            </script>
 </html>
